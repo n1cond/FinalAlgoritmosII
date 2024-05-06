@@ -1,0 +1,169 @@
+﻿const $$Test = function () {
+    let Alumnos = new Array();
+    this.makePassword = function () {
+        const Submit = function () {
+            let opcion = "accion=SHA1&text1=" + text1.value + "&text2=" + text2.value;
+            let dispersado = $a.consulta(opcion);
+            let dispersados = dispersado.split(" ");
+            sha1.value = dispersados[0];
+            sha2.value = dispersados[1];
+            sha1.style.display = "block";
+            sha2.style.display = "block";
+            if (sha1.value === sha2.value) {
+                alert("Ambas dispersiones son iguales".toUpperCase());
+            } else {
+                alert("ambas dispersiones son distintas".toUpperCase());
+            }
+            return false;
+        };
+        ClearSection();
+        let f = $df.form("dispersion sha1", "dispersar", "fDispersion");
+        let fDispersion = $d.id("fDispersion");
+        f.style.width = "50%";
+        fDispersion.style.height = "10rem";
+        let text1 = $dc.inputText(fDispersion, "Password1");
+        let text2 = $dc.inputText(fDispersion, "Password2");
+        text1.required = true;
+        text2.required = true;
+        let sha1 = $dc.inputText(fDispersion, "Password1");
+        let sha2 = $dc.inputText(fDispersion, "Password2");
+        sha1.style.display = "none";
+        sha2.style.display = "none";
+        sha1.disabled = true;
+        sha2.disabled = true;
+        f.onsubmit = Submit;
+    };
+    this.makeAlumnos = function () {
+        const Fload = function (res) {
+            if (res != "OK" && res != undefined && res != "") alert(res);
+            $test.makeAlumnos();
+        };
+        ClearSection();
+        let f = $df.formImg("Alumnos", "agregar", "fMakeAlumnos", Fload);
+        let fMakeAlumnos = $d.id("fMakeAlumnos");
+        f.style.width = "50%";
+        fMakeAlumnos.style.height = "10rem";
+        let nombre = $dc.inputText(fMakeAlumnos, "Nombre");
+        let dni = $dc.inputNumber(fMakeAlumnos, "Dni");
+        let mail = $dc.inputMail(fMakeAlumnos, "Mail");
+        nombre.name = "Nombre";
+        mail.name = "Mail";
+        dni.name = "Dni";
+        let img = $dc.inputImg(fMakeAlumnos, "Foto", "Img");
+        img.required = false;
+        f.accion.value = "AGREGARALUMNO";
+        $test.listAlumnos();
+    };
+    this.listAlumnos = function () {
+        let respuesta = $a.consulta("accion=CARGARALUMNOS");
+        try {
+            Alumnos = JSON.parse(respuesta);
+        } catch (e) {
+            alert(e);
+        }
+        const fRow = function (tr, alumno) {
+            tr.innerHTML = "";
+            $dc.td(tr).innerText = alumno.ID;
+            $dc.td(tr).innerText = alumno.Nombre;
+            $dc.td(tr).innerText = alumno.Dni;
+            $dc.td(tr).innerText = alumno.Mail;
+            let fotoPerfil = $dc.img($dc.td(tr), alumno.FotoURL);
+            fotoPerfil.className = "tableThumbnail";
+
+            let td = $dc.td(tr);
+            td.innerHTML = "Modificar";
+            td.onclick = () => $test.modificarAlumno(alumno);
+            td.style.color = "white";
+            td.style.background = "black";
+            td.onmouseover = function () { this.style.opacity = "0.5"; };
+            td.onmouseleave = function () { this.style.opacity = "1"; };
+
+            let td2 = $dc.td(tr);
+            td2.innerHTML = "Eliminar";
+            td2.onclick = () => $test.eliminarAlumno(alumno.ID);
+            td2.style.color = "white";
+            td2.style.background = "red";
+            td2.onmouseover = function () { this.style.opacity = "0.5"; };
+            td2.onmouseleave = function () { this.style.opacity = "1"; };
+        }
+        $dt.table(["id", "nombre", "dni", "mail", "imagen", "modificar", "eliminar"], Alumnos, 4, fRow);
+    };
+    this.modificarAlumno = function (alumno) {
+        const Fload = function (res) {
+            if (res != "OK" && res != undefined && res != "") alert(res);
+            $test.makeAlumnos();
+        };
+        ClearSection();
+        let f = $df.formImg("Modificar alumno", "modificar", "cModificar", Fload);
+        let cModificar = $d.id("cModificar");
+        f.style.width = "50%";
+        cModificar.style.height = "10rem";
+        let nombre = $dc.inputText(cModificar, "nombre");
+        let dni = $dc.inputNumber(cModificar, "dni");
+        let mail = $dc.inputMail(cModificar, "mail");
+        let img = $dc.inputImg(cModificar, "foto", "uploadedFile");
+        img.required = false;
+
+        nombre.name = "Nombre";
+        dni.name = "Dni";
+        mail.name = "Mail";
+
+        nombre.value = alumno.Nombre;
+        dni.value = alumno.Dni;
+        mail.value = alumno.Mail;
+
+        f.accion.value = "MODIFICARALUMNO";
+        f.ID.value = alumno.ID;
+        $test.listAlumnos();
+    };
+    this.eliminarAlumno = function (ID) {
+        let data = "accion=ELIMINARALUMNO&ID=" + ID;
+        $a.consulta(data);
+        $test.makeAlumnos();
+    };
+    this.findAlumno = function () {
+        const Change = function () {
+            nombre.value = "";
+            dni.value = "";
+            mail.value = "";
+            img.src = "IMAGENES/USUARIOS/alumnodefault.jpg";
+        };
+        const Submit = function () {
+            let alumno = $a.consulta("accion=ENCONTRARALUMNO&ID=" + id.value);
+            try {
+                alumno = JSON.parse(alumno);
+                nombre.value = alumno.Nombre;
+                dni.value = alumno.Dni;
+                mail.value = alumno.Mail;
+                img.src = alumno.FotoURL;
+            } catch (e) {
+                alert(alumno);
+            }
+            return false;
+        };
+        ClearSection();
+        let f = $df.form("buscar Alumno", "buscar", "cBuscar");
+        f.style.width = "50%";
+        let cBuscar = $d.id("cBuscar");
+        cBuscar.style.height = "10rem";
+        let id = $dc.inputNumber(cBuscar, "ID");
+        id.onchange = Change;
+
+        let nombre = $dc.inputText(cBuscar, "nombre");
+        let dni = $dc.inputNumber(cBuscar, "dni");
+        let mail = $dc.inputMail(cBuscar, "mail");
+
+        nombre.disabled = true;
+        dni.disabled = true;
+        mail.disabled = true;
+
+        let footer = f.childNodes[2];
+        let btReset = footer.childNodes[1];
+        $d.rc(footer, btReset);
+        let img = $dc.img(footer, "IMAGENES/USUARIOS/alumnodefault.jpg");
+        footer.style.height = "5rem";
+        img.className = "profImg";
+        f.onsubmit = Submit;
+    };
+}
+let $test = new $$Test();

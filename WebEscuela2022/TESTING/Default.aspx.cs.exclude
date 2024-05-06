@@ -1,0 +1,334 @@
+﻿using System;
+using BusinessTable;
+using BusinessPersonas;
+
+public partial class _Default : System.Web.UI.Page
+{
+    #region PARÁMETROS
+    string PathUser = AppDomain.CurrentDomain.BaseDirectory + @"DATOS\USUARIOS.txt";
+    string PathUsersDefault = AppDomain.CurrentDomain.BaseDirectory + @"DATOS\BASEUSERDEFAULT.txt";
+    string PathImgDefault = AppDomain.CurrentDomain.BaseDirectory + @"IMAGES\USUARIOS\default.jpg";
+    #endregion
+
+    protected void Page_Load(object sender,EventArgs e)
+    {
+        if(Request["accion"] != null)
+        {
+            switch(Request["accion"])
+            {
+                #region webEscuela
+                //case "LOADUSERS": ReadUsers(); break;
+                //case "SAVEUSERS": SaveUsers(); break;
+                //case "UPLOADIMG": ModifyImgUser(); break;
+                //case "ADDPERSONA": AddPersona(); break;
+                //case "ERASEPERSONA": ErasePersona(); break;
+                #endregion
+                #region Test
+                case "AGREGARALUMNO": AgregarAlumno(); break;
+                case "CARGARALUMNOS": CargarAlumnos(); break;
+                case "MODIFICARALUMNO": ModificarAlumno(); break;
+                case "ELIMINARALUMNO": EliminarAlumno(); break;
+                case "ENCONTRARALUMNO": EncontrarAlumno(); break;
+                case "SHA1": Sha1(); break;
+                #endregion
+                #region Personas
+                case "AGREGARPERSONA": AgregarPersona(); break;
+                case "CARGARPERSONAS": CargarPersonas(); break;
+                case "MODIFICARPERSONA": ModificarPersona(); break;
+                case "ELIMINARPERSONA": EliminarPersona(); break;
+                case "ENCONTRARPERSONA": EncontrarPersona(); break;
+                #endregion
+                default: return;
+            }
+        }
+    }
+
+    #region Personas_funciones
+    private void EncontrarPersona()
+    {
+        Persona persona = new Persona();
+        try
+        {
+            persona.ID = int.Parse(Request["ID"]);
+            Response.Write(persona.Find());
+        } catch(Exception e)
+        {
+            Response.Write(e.Message);
+        }
+    }
+
+    private void EliminarPersona()
+    {
+        try
+        {
+            Persona persona = new Persona { ID = int.Parse(Request["ID"]) };
+            persona.Erase();
+            Response.Write("OK");
+        } catch(Exception e)
+        {
+            Response.Write(e.Message);
+        }
+    }
+
+    private void ModificarPersona()
+    {
+        Persona persona = new Persona();
+        try
+        {
+            persona.Nombre = Request["Nombre"];
+            persona.Dni = int.Parse(Request["Dni"]);
+            persona.Mail = Request["Mail"];
+            persona.Direccion = Request["Direccion"];
+            persona.ID = int.Parse(Request["ID"]);
+
+            if (Request.Files.Count > 0)
+            {
+                persona.UploadedFile = Request.Files[0];
+            }
+            persona.Modify();
+            Response.Write("OK");
+        }
+        catch (Exception e)
+        {
+            Response.Write(e.Message);
+        }
+    }
+
+    private void CargarPersonas()
+    {
+        try {
+            Response.Write(new Persona().List());
+        } catch(Exception e)
+        {
+            Response.Write(e.Message);
+        }
+    }
+
+    private void AgregarPersona()
+    {
+        Persona persona = new Persona();
+        try
+        {
+            persona.Nombre = Request["Nombre"];
+            persona.Dni = int.Parse(Request["Dni"]);
+            persona.Mail = Request["Mail"];
+            persona.Direccion = Request["Direccion"];
+
+            if (Request.Files.Count > 0)
+            {
+                persona.UploadedFile = Request.Files[0];
+            }
+            persona.Add();
+            Response.Write("OK");
+        } catch (Exception e)
+        {
+            Response.Write(e.Message);
+        }
+    }
+    #endregion
+    #region Test_funciones
+    private TableAlumnos _cargarDatos()
+    {
+        TableAlumnos Ta = new TableAlumnos
+        {
+            Nombre = Request["Nombre"],
+            Dni = int.Parse(Request["Dni"]),
+            Mail = Request["Mail"]
+        };
+
+        if (Request.Files.Count > 0) Ta.ImageFile = Request.Files[0];
+        return Ta;
+    }
+
+    private void AgregarAlumno()
+    {
+        try
+        {
+            TableAlumnos Ta = _cargarDatos();
+            Ta.Add();
+            Response.Write("OK");
+        } catch (Exception e)
+        {
+            if (e.Message.Contains("Dni"))
+            {
+                Response.Write("Dni repetido");
+                return;
+            }
+            if (e.Message.Contains("Mail"))
+            {
+                Response.Write("Mail repetido");
+                return;
+            }
+            Response.Write(e.Message);
+            return;
+        }
+    }
+
+    private void CargarAlumnos()
+    {
+        try
+        {
+            Response.Write(new TableAlumnos().List());
+        } catch (Exception e)
+        {
+            Response.Write(e.Message);
+        }
+    }
+
+    private void ModificarAlumno()
+    {
+        try
+        {
+            TableAlumnos Ta = _cargarDatos();
+            Ta.ID = int.Parse(Request["ID"]);
+            Ta.Modify();
+            Response.Write("OK");
+        } catch (Exception e) {
+            if (e.Message.Contains("Dni"))
+            {
+                Response.Write("Dni repetido");
+                return;
+            }
+            if (e.Message.Contains("Mail"))
+            {
+                Response.Write("Mail repetido");
+                return;
+            }
+            Response.Write(e.Message);
+            return;
+        }
+    }
+
+    private void EliminarAlumno()
+    {
+        try
+        {
+            TableAlumnos Ta = new TableAlumnos {
+                ID = int.Parse(Request["ID"])
+            };
+            Ta.Erase();
+            Response.Write("OK");
+        } catch (Exception e)
+        {
+            Response.Write(e.Message);
+        }
+    }
+
+    private void EncontrarAlumno()
+    {
+        try
+        {
+            TableAlumnos Ta = new TableAlumnos
+            {
+                ID = int.Parse(Request["ID"])
+            };
+            Response.Write(Ta.Find());
+        } catch (Exception e)
+        {
+            Response.Write(e.Message);
+        }
+    }
+    
+    private void Sha1()
+    {
+        Dispersor hash = new Dispersor();
+        Response.Write(hash.Dispersar(Request["text1"]) + " " + hash.Dispersar(Request["text2"]));
+    }
+    #endregion
+    #region webEscuela_funciones
+    //private void ErasePersona()
+    //{
+    //    //IPersona P = new Persona();
+    //    //P.Erase();
+    //}
+
+    //private void AddPersona()
+    //{
+    //    //IPersona P = new Persona
+    //    //{
+    //    //    Nombre = Request["Nombre"],
+    //    //    Dni = int.Parse(Request["Dni"]),
+    //    //    Direccion = Request["Direccion"],
+    //    //    Mail = Request["Mail"],
+    //    //    UploadedFile = Request.Files[0]
+    //    //};
+    //    //try
+    //    //{
+    //    //    P.Add();
+    //    //    Response.Write("ok");
+    //    //}
+    //    //catch(Exception e)
+    //    //{
+    //    //    Response.Write(e.Message);
+    //    //}
+    //}
+
+    //private void SaveUsers()
+    //{
+    //    string Data = Request["baseUsers"];
+    //    try
+    //    {
+    //        File.WriteAllText(PathUser, Data);
+    //        Response.Write("OK");
+    //    } catch(Exception e) { Response.Write(e); }
+    //}
+
+    //private void ReadUsers()
+    //{
+    //    try
+    //    {
+    //        //Si no está creado el archivo, cargo la base de usuarios por defecto
+    //        if (!File.Exists(PathUser)) File.Copy(PathUsersDefault, PathUser);
+    //        string json = File.ReadAllText(PathUser);
+    //        if(json == "") json = "NO SE ENCONTRARON USUARIOS";
+    //        Response.Write(json);
+    //    }
+    //    catch (Exception e)
+    //    {
+    //        Console.Write(e);
+    //    }
+    //}
+
+    //private void ModifyImgUser()
+    //{
+    //    string ext = "";
+    //    string ID = Request["ID"];
+    //    string PathIMG = AppDomain.CurrentDomain.BaseDirectory + @"IMAGES\USUARIOS\USER"+ID+".";
+    //    string PathIMG1 = AppDomain.CurrentDomain.BaseDirectory + @"IMAGES\USUARIOS\USER_" + ID + ".";
+    //    string UrlIMG = "IMAGES/USUARIOS/USER" + ID + ".";
+    //    string UrlIMG1 = "IMAGES/USUARIOS/USER_" + ID + ".";
+
+    //    string res = PathImgDefault;
+
+    //    if (Request.Files[0].FileName != "")
+    //    {
+    //        string[] namesplit = Request.Files[0].FileName.Split('.');
+    //        ext = namesplit[namesplit.Length - 1];
+
+    //        string path0 = PathIMG + ext;
+    //        string url0 = UrlIMG + ext;
+    //        string path1 = PathIMG1 + ext;
+    //        string url1 = UrlIMG1 + ext;
+
+    //        if (File.Exists(path0))
+    //        {
+    //            File.Delete(path0);
+    //            Request.Files[0].SaveAs(path1);
+    //            res = url1;
+    //        } else
+    //        if(File.Exists(path1))
+    //        {
+    //            File.Delete(path1);
+    //            Request.Files[0].SaveAs(path0);
+    //            res = url0;
+    //        }
+    //        if(!File.Exists(path0) && !File.Exists(path1))
+    //        {
+    //            Request.Files[0].SaveAs(path0);
+    //            res = url0;
+    //        }
+    //    }
+    //    Response.Write(res);
+    //}
+    #endregion
+}

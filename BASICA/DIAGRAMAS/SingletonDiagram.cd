@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BASICA.ParentSingleton">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>ParentSingleton.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IHashing" />
+      <Property Name="IIMage" />
+      <Property Name="IJson" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="BASICA.IHashing" Collapsed="true">
+    <Position X="2" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IHashing.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IIMage" Collapsed="true">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IIMage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IJson" Collapsed="true">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IJSON.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IGenericSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAIAAAAAAAAAAABAAAAAAACAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IgenericSingleton.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

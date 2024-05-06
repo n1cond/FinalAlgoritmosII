@@ -1,0 +1,21 @@
+﻿//using BASICA;
+
+//namespace BusinessPersonas
+//{
+//    /// <summary>
+//    /// La clase es internal ya que sólo funcionará
+//    /// dentro de esta librería
+//    /// y partial porque permitirá
+//    /// agregar sucesivas implementaciones sin modificar las previas
+//    /// </summary>
+//    internal partial class Singleton : ParentSingleton
+//    {
+//        #region Singleton
+//        //Se instancia la primera invocación
+//        //Acceso público de la única instancia creada
+//        public static Singleton GetInstance { get; } = new Singleton();
+//        //Constructor privado
+//        private Singleton() { }
+//        #endregion
+//    }
+//}

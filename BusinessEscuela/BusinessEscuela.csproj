@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F0E0DFA-1C12-4E72-98F0-8C6CAF0776AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessEscuela</RootNamespace>
+    <AssemblyName>BusinessEscuela</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLASES\Carrera.cs" />
+    <Compile Include="CLASES\Singleton.Carrera.cs" />
+    <Compile Include="CLASES\Singleton.cs" />
+    <Compile Include="CLASES\Singleton.Usuario.cs" />
+    <Compile Include="CLASES\Usuario.cs" />
+    <Compile Include="CLASES\UsuarioRol.cs" />
+    <Compile Include="INTERFACES\ICarrera.cs" />
+    <Compile Include="INTERFACES\ISingletonCarrera.cs" />
+    <Compile Include="INTERFACES\ISingletonUsuario.cs" />
+    <Compile Include="INTERFACES\ISingletonUsuarioRol.cs" />
+    <Compile Include="INTERFACES\IUsuario.cs" />
+    <Compile Include="INTERFACES\IUsuarioRol.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLASES\Singleton.UsuarioRol.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BASICA\BASICA.csproj">
+      <Project>{422e644e-0656-4a55-9480-b523e973b4d1}</Project>
+      <Name>BASICA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

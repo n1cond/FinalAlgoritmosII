@@ -1,0 +1,67 @@
+﻿//using System.Web;
+//using BASICA;
+
+//namespace BusinessPersonas
+//{
+//    public class Persona : IPersona
+//    {
+//        public int ID { get; set; }
+//        public string Nombre { get; set; }
+//        public int Dni { get; set; }
+//        public string Mail { get; set; }
+//        public string Direccion { get; set; }
+
+//        internal Singleton S => Singleton.GetInstance;
+
+//        public string DirBase => "IMAGENES";
+
+//        public string Directory => "PERSONAS";
+
+//        public string Prefix => "persona";
+
+//        /*public void MakeExtension() {
+//            if (UploadedFile != null && UploadedFile.FileName != "")
+//            {
+//                string[] aux = UploadedFile.FileName.Split('.');
+//                Extension = aux[aux.Length - 1];
+//                return;
+//            }
+//            Image img = new Image();
+//            img.DirBase = DirBase;
+//            img.Directory = Directory;
+//            img.Prefix = Prefix;
+//            img.ID = ID;
+//            img.FindFilePath(); //Al hacer esto se carga el valor de Extension
+//            Extension = img.Extension;
+//        }
+
+//        public string Extension { get; set; }*/
+
+//        public string MakeData { get => ID + ";" + DirBase + ";" + Directory + ";" + Prefix /*+ ";" + Extension*/; }
+
+//        private HttpPostedFile uploadedFile;
+
+//        public HttpPostedFile UploadedFile {
+//            get { return uploadedFile; }
+//            set
+//            {
+//                if(value.FileName != "")
+//                {
+//                    string[] aux = value.FileName.Split(new char[] { '.' });
+//                    //Extension = aux[aux.Length - 1];
+//                    uploadedFile = value;
+//                }
+//            }
+////        }
+
+//        public void Add() { /*MakeExtension()*/; S.ISP.Add(this); }
+
+//        public void Erase() { /*MakeExtension()*/; S.ISP.Erase(this); }
+
+//        public string Find() { /*MakeExtension()*/; return S.ISP.Find(this); }
+
+//        public string List() { return S.ISP.List(); }
+
+//        public void Modify() { /*MakeExtension()*/; S.ISP.Modify(this); }
+//    }
+//}

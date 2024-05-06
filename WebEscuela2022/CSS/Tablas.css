@@ -1,0 +1,60 @@
+table {
+    width: 90%;
+    background: #ACD;
+    border-color: #EFEFEF;
+    border-style: solid;
+    border-width: medium;
+    margin: 2rem auto;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 40%);
+    /* margin-left: 10%; */
+}
+
+th {
+    background: #24B;
+    color: #DDD;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btfoot {
+    background: #24B;
+    color: #DDD;
+    display: inline-block;
+}
+
+.tableThumbnail {
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+}
+
+.iframePdf {
+    width: 100%;
+    height: 30rem;
+    margin-top: 1rem;
+}
+
+.btnTable {
+    color: white;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+}
+
+.Modificar {
+    background-color: red;
+}
+
+.Eliminar {
+    background-color: black;
+}
+
+.PlanEstudios {
+    background-color: cadetblue;
+    text-align: center;
+    padding: .5rem 0;
+}
+.PlanEstudios :focus {
+    opacity: 0.8;
+}
+

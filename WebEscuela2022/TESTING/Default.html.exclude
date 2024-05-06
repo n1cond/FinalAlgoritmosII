@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PÁGINA INICIAL</title>
+    <!--HOJAS DE ESTILOS-->
+    <link id="css1" href="CSS/General1.css" rel="stylesheet" />
+    <link id="nav" href="CSS/Nav.css" rel="stylesheet" />
+    <link id="nav1" href="CSS/Nav1.css" rel="stylesheet" />
+    <link id="forms" href="CSS/Formularios.css" rel="stylesheet" />
+    <link href="CSS/Tablas.css" rel="stylesheet" />
+    <!--SCRIPTS-->
+    <script src="JS/cambioEstilos.js"></script>
+    <script src="JS/DOM.js"></script>
+    <script src="JS/datos.js"></script>
+    <script src="JS/carreras.js"></script>
+    <script src="JS/forms.js"></script>
+    <script src="JS/general.js"></script>
+    <script src="JS/usuarios.js"></script>
+    <script src="JS/tablas.js"></script>
+    <script src="JS/Test.js"></script>
+    <script src="JS/persona.js"></script>
+    <script src="JS/nav.js"></script>
+    <script src="JS/MAIN.js"></script>
+</head>
+<body>
+    <header>
+        <img src="IMAGENES/GENERAL/linux_PNG42.png" />
+        <div>
+            <h2>INSTITUTO EDUCATIVO BALLESTER</h2>
+            <h3>Excelencia en educación</h3>
+            <h5>Mitre 5045 Villa Ballester, Bs. As.</h5>
+        </div>
+    </header>
+    <nav id="Nav"><ul id="ul"></ul></nav>
+    <section id="Section"></section>
+</body>
+</html>

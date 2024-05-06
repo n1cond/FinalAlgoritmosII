@@ -1,0 +1,66 @@
+﻿//using System.Data;
+//using BASICA;
+
+//namespace BusinessPersonas
+//{
+//    internal partial class Singleton : ISingletonPersona
+//    {
+//        //Agregamos un acceso público a la interface
+//        public ISingletonPersona ISP { get => this; }
+
+//        void IGenericSingleton<Persona>.Add(Persona Data)
+//        {
+//            IConnection.CreateCommand("Personas_Insert", "Persona");
+//            IConnection.AddVarchar("Nombre", 30, Data.Nombre);
+//            IConnection.AddInt("Dni", Data.Dni);
+//            IConnection.AddVarchar("Mail", 50, Data.Mail);
+//            IConnection.AddVarchar("Direccion", 70, Data.Direccion);
+//            Data.ID = IConnection.Insert();
+//            IImage.Add(Data.UploadedFile, Data.MakeData);
+//        }
+
+//        void IGenericSingleton<Persona>.Erase(Persona Data)
+//        {
+//            IConnection.CreateCommand("Personas_Delete", "Persona");
+//            IConnection.AddInt("ID", Data.ID);
+//            IConnection.Delete();
+//            IImage.Erase(Data.MakeData);
+//        }
+
+//        string IGenericSingleton<Persona>.Find(Persona Data)
+//        {
+//            IConnection connection = Connection.GetInstance();
+//            connection.CreateCommand("Personas_Find", "Persona");
+//            connection.AddInt("ID", Data.ID);
+//            DataRow res = connection.Find();
+//            return ISP.MakeJson(res, Data);
+//        }
+
+//        string ISingletonPersona.List()
+//        {
+//            IConnection.CreateCommand("Personas_List", "Personas");
+//            DataTable res = IConnection.List();
+//            return IListToTable.TableToJson<Persona>(res, ISP);
+//        }
+
+//        string IGenericSingleton<Persona>.MakeJson(DataRow Dr, Persona Data)
+//        {
+//            string json = IJson.toJson(Dr);
+//            Data.ID = int.Parse(Dr.ItemArray[0].ToString());
+//            json = IJson.addKey(json, "FotoURL", IImage.URL(Data.MakeData));
+//            return json;
+//        }
+
+//        void IGenericSingleton<Persona>.Modify(Persona Data)
+//        {
+//            IConnection.CreateCommand("Personas_Update", "Persona");
+//            IConnection.AddInt("ID", Data.ID);
+//            IConnection.AddVarchar("Nombre", 30, Data.Nombre);
+//            IConnection.AddInt("Dni", Data.Dni);
+//            IConnection.AddVarchar("Mail", 50, Data.Mail);
+//            IConnection.AddVarchar("Direccion", 70, Data.Direccion);
+//            IConnection.Update();
+//            IImage.Add(Data.UploadedFile, Data.MakeData);
+//        }
+//    }
+//}

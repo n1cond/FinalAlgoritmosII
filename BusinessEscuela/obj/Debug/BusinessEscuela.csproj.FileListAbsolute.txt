@@ -1,0 +1,9 @@
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\bin\Debug\BusinessEscuela.dll
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\bin\Debug\BusinessEscuela.pdb
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\bin\Debug\BASICA.dll
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\bin\Debug\BASICA.pdb
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\obj\Debug\BusinessEscuela.csprojAssemblyReference.cache
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\obj\Debug\BusinessEscuela.csproj.CoreCompileInputs.cache
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\obj\Debug\BusinessEscuela.csproj.CopyComplete
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\obj\Debug\BusinessEscuela.dll
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\WebEscuela2022\BusinessEscuela\obj\Debug\BusinessEscuela.pdb

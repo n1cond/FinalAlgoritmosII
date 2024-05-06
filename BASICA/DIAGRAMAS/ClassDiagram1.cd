@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BASICA.ParentSingleton" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="IIMage1" Type="BASICA.IIMage" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="1.062" />
+        <Point X="7.75" Y="1.596" />
+        <Point X="5.25" Y="1.596" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="IConnection" Type="BASICA.IConnection" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.312" Y="1.062" />
+        <Point X="8.312" Y="3.096" />
+        <Point X="5.25" Y="3.096" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="IJson1" Type="BASICA.IJson" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="1.062" />
+        <Point X="8" Y="2.281" />
+        <Point X="5.25" Y="2.281" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="IListToTable" Type="BASICA.IListToTable" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.562" Y="1.062" />
+        <Point X="8.562" Y="4.148" />
+        <Point X="5.25" Y="4.148" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAIAAAAAAAICAA=</HashCode>
+      <FileName>CLASES\ParentSingleton.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IHashing1" />
+      <Property Name="IIMage1" />
+      <Property Name="IConnection" />
+      <Property Name="IJson1" />
+      <Property Name="IListToTable" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="BASICA.IHashing" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IHashing.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IIMage" Collapsed="true">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IIMage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IConnection" Collapsed="true">
+    <Position X="3.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAEAAAAAAEIAAAAAAAAAAEAAAI=</HashCode>
+      <FileName>INTERFACES\IConnection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IJson" Collapsed="true">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IJson.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IListToTable">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IListToTable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IGenericSingleton&lt;T&gt;">
+    <Position X="0.75" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAIAAAAAAAAAAABAAAAAAACAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IGenericSingleton.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

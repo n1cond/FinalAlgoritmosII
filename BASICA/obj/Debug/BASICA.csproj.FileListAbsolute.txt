@@ -1,0 +1,18 @@
+C:\ALGORITMO 2022 TUPAC\DESARROLLO\BASICA\BASICA\bin\Debug\BASICA.dll
+C:\ALGORITMO 2022 TUPAC\DESARROLLO\BASICA\BASICA\bin\Debug\BASICA.pdb
+C:\ALGORITMO 2022 TUPAC\DESARROLLO\BASICA\BASICA\obj\Debug\BASICA.csprojAssemblyReference.cache
+C:\ALGORITMO 2022 TUPAC\DESARROLLO\BASICA\BASICA\obj\Debug\BASICA.csproj.CoreCompileInputs.cache
+C:\ALGORITMO 2022 TUPAC\DESARROLLO\BASICA\BASICA\obj\Debug\BASICA.dll
+C:\ALGORITMO 2022 TUPAC\DESARROLLO\BASICA\BASICA\obj\Debug\BASICA.pdb
+C:\ALGORITMO 2022 TUPAC\GIT\DESARROLLO\BASICA\BASICA\bin\Debug\BASICA.dll
+C:\ALGORITMO 2022 TUPAC\GIT\DESARROLLO\BASICA\BASICA\bin\Debug\BASICA.pdb
+C:\ALGORITMO 2022 TUPAC\GIT\DESARROLLO\BASICA\BASICA\obj\Debug\BASICA.csprojAssemblyReference.cache
+C:\ALGORITMO 2022 TUPAC\GIT\DESARROLLO\BASICA\BASICA\obj\Debug\BASICA.csproj.CoreCompileInputs.cache
+C:\ALGORITMO 2022 TUPAC\GIT\DESARROLLO\BASICA\BASICA\obj\Debug\BASICA.dll
+C:\ALGORITMO 2022 TUPAC\GIT\DESARROLLO\BASICA\BASICA\obj\Debug\BASICA.pdb
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\BASICA\BASICA\bin\Debug\BASICA.dll
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\BASICA\BASICA\bin\Debug\BASICA.pdb
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\BASICA\BASICA\obj\Debug\BASICA.csproj.CoreCompileInputs.cache
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\BASICA\BASICA\obj\Debug\BASICA.dll
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\BASICA\BASICA\obj\Debug\BASICA.pdb
+C:\Users\rhash\Documents\Tupac\Algoritmos II\Proyectos\BASICA\BASICA\obj\Debug\BASICA.csprojAssemblyReference.cache

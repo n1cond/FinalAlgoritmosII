@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BASICA.CLASES.Connection">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAkkgJIAAAAAAAAEEAAAAAQEIAACAAAAAQAAAAAI=</HashCode>
+      <FileName>CLASES\Connection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BASICA.IBasicConnection">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IBasicConnection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.IParameters">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAkAJAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INTERFACES\IParameters.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASICA.INTERFACES.IConnection">
+    <Position X="5.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAEAAAAAAEIAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>INTERFACES\IConnection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
